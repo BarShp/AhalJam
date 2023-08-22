@@ -1,0 +1,21 @@
+{
+    "name": "AHL.Core.Pool.Manager",
+    "rootNamespace": "",
+    "references": [
+        "GUID:51c197ae521a4104b4e8cc6f133c282f",
+        "GUID:39d7a4eb7ab34b99afe06250bf31d70c",
+        "GUID:80778e31cf97474cbe659cd42130b738",
+        "GUID:17758f63897d4b7885df1201487b742b",
+        "GUID:8f8cfbe0301f4cad8a98fa9fbfd6f5b2",
+        "GUID:4a42459e6953840938a41985bf8e0a52"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
