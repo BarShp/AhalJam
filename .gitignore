@@ -74,3 +74,6 @@ crashlytics-build.properties
 
 .idea
 SerializedBuildInfo
+
+.vscode
+.vsconfig
