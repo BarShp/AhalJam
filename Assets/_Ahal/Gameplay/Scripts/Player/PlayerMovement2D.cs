@@ -16,7 +16,6 @@ public class PlayerMovement2D : MonoBehaviour
     [SerializeField] private LayerMask jumpableWall;
     
     private BoxCollider2D coll;
-    
     private float horizontalInput;
     private Vector2 horizontalDir;
     private bool IsGrounded => CheckGround(Vector2.down);
@@ -122,7 +121,7 @@ public class PlayerMovement2D : MonoBehaviour
             horizontalMovement = Vector2.zero;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
         }
-
+        
         var moveDir = horizontalMovement * speed;
         rb.AddForce(moveDir);
     }
