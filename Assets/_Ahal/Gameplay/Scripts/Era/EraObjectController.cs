@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EraObjectController : MonoBehaviour
 {
-
+    public bool canRespawn = true;
     private void Awake() {
         //Get RigidBody From Object
     }
 
     public void EnableObject() 
     {
-        gameObject.SetActive(true);
+        if (canRespawn) 
+        {
+            gameObject.SetActive(true);
+        }
         //SetActiveTrue
         //Animation
         //Timer for X
@@ -24,5 +28,10 @@ public class EraObjectController : MonoBehaviour
         //Animation
         //Timer for X
         //SetActiveFalse
+    }
+
+    public void PreventRespawn()
+    {
+        canRespawn = false;
     }
 }
