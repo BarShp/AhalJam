@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement2D : MonoBehaviour
@@ -7,6 +9,10 @@ public class PlayerMovement2D : MonoBehaviour
     public float jumpForce = 10f;
     public float horizontalJumpForce = 5f;
     public bool isFacingRight = true;
+
+    [SerializeField] private float maxCoyoteTime = 0.2f;
+    private float coyoteTimeCounter;
+    private bool isLastTouchWall;
 
     private bool isWallJumping;
     private float wallJumpingDirection;
@@ -37,21 +43,38 @@ public class PlayerMovement2D : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         var horizontalMovement = Vector2.right * horizontal;
-
-
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (IsGrounded())
         {
-            print("Yes Ground");
-            rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+            coyoteTimeCounter = 0;
+            isLastTouchWall = false;
+        }
+        else if (CheckWall(horizontalMovement))
+        {
+            coyoteTimeCounter = 0;
+            isLastTouchWall = true;
+        }
+        else if(coyoteTimeCounter < maxCoyoteTime)
+        {
+            coyoteTimeCounter += Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Jump") && CheckWall(horizontalMovement))
+        if (Input.GetButtonDown("Jump"))
         {
-            print("Yes wall");
-            var horizontalJumpDir = -horizontalMovement.normalized;
-            rb.AddForce(new Vector2(horizontalJumpDir.x * horizontalJumpForce, jumpForce));
+            if (CheckWall(horizontalMovement) || isLastTouchWall && coyoteTimeCounter < maxCoyoteTime)
+            {
+                print("Yes wall");
+                var horizontalJumpDir = -horizontalMovement.normalized;
+                rb.AddForce(new Vector2(horizontalJumpDir.x * horizontalJumpForce, jumpForce));
+                coyoteTimeCounter = maxCoyoteTime;
+            }
+            else if (IsGrounded() || !isLastTouchWall && coyoteTimeCounter < maxCoyoteTime)
+            {
+                print("Yes Ground");
+                rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+                coyoteTimeCounter = maxCoyoteTime;
+            }
+            
         }
-
         //wallIsSlide();
         Flip();
     }
@@ -69,7 +92,7 @@ public class PlayerMovement2D : MonoBehaviour
 
         var moveDir = horizontalMovement * speed;
         rb.AddForce(moveDir);
-        
+
     }
 
     private void Flip()
@@ -152,7 +175,7 @@ public class PlayerMovement2D : MonoBehaviour
 
     private bool IsTouchingAWall()
     {
-        return Physics2D.BoxCast(coll.bounds.center, (Vector2)coll.bounds.size , 0f, Vector2.down, 0.1f, jumpableWall);
+        return Physics2D.BoxCast(coll.bounds.center, (Vector2)coll.bounds.size, 0f, Vector2.down, 0.1f, jumpableWall);
     }
 
     private bool CheckGround(Vector2 dir)
