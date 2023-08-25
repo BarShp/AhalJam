@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-
+using UnityEngine.AI;
 
 public class EraManager : MonoBehaviour
 {
@@ -15,6 +15,7 @@ public class EraManager : MonoBehaviour
     {
         PopulateEraTypeToTag();
         PopulateEraTypeToEraObjects();
+        DisableAllEraObjectControllers();
         ActivateEra(EraType.Era1);
     }
 
@@ -24,10 +25,7 @@ public class EraManager : MonoBehaviour
         
         if (currentEraType != null)
         {
-            foreach (var eraObjectController in eraTypeToEraObjects[currentEraType.Value]) 
-            {
-                eraObjectController.DisableObject();
-            }
+            DisableEraObjectControllersByKey(currentEraType.Value);
         }
 
         foreach (var eraObjectController in eraTypeToEraObjects[newEraType]) 
@@ -37,6 +35,19 @@ public class EraManager : MonoBehaviour
 
         currentEraType = newEraType;
     }    
+
+    private void DisableAllEraObjectControllers()
+    {
+        eraTypeToEraObjects.Keys.ToList().ForEach(eraTypeToDisable => DisableEraObjectControllersByKey(eraTypeToDisable));
+    }
+
+    private void DisableEraObjectControllersByKey(EraType eraTypeToDisable)
+    {
+            foreach (var eraObjectController in eraTypeToEraObjects[eraTypeToDisable]) 
+            {
+                eraObjectController.DisableObject();
+            }
+    }
 
     private void PopulateEraTypeToTag()
     {
