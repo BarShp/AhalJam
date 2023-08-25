@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class MovingObject : MonoBehaviour
 {
+    [SerializeField] bool moveOnStart;
     [SerializeField] List<Waypoint> waypoints;
-
+    
     private int targetWaypointIndex = 0;
 
     private Waypoint currentWaypoint;
     private Waypoint targetWaypoint;
     private float lerpProgress = 0;
+    private bool shouldMove;
 
+    public void StartMoving() => shouldMove = true; 
+    public void StopMoving() => shouldMove = false; 
+    
     private void Start()
     {
         var firstWaypoint = waypoints[0];
@@ -20,10 +25,17 @@ public class MovingObject : MonoBehaviour
         transform.position = firstWaypoint.WayPointTransform.position;
         currentWaypoint = firstWaypoint;
         targetWaypoint = waypoints[targetWaypointIndex];
+
+        if (moveOnStart)
+        {
+            StartMoving();
+        }
     }
 
     void Update()
     {
+        if (!shouldMove) return;
+        
         if (lerpProgress >= 1)
         {
             targetWaypointIndex++;

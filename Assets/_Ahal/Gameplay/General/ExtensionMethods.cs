@@ -14,4 +14,9 @@ public static class ExtensionMethods
         yield return new WaitForSeconds(seconds);
         onComplete?.Invoke();
     }
+
+    public static bool IsInLayer(this LayerMask layerMask, int layer)
+    {
+        return (layerMask & 1 << layer) > 0;
+    }
 }
