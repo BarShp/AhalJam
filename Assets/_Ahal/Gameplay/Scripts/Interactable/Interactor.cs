@@ -8,7 +8,7 @@ public class Interactor : MonoBehaviour
 
     protected void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.F))
         {
             if (currentInteractableComponent != null)
             {
