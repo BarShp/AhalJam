@@ -25,28 +25,31 @@ public class EraManager : MonoBehaviour
         
         if (currentEraType != null)
         {
-            DisableEraObjectControllersByKey(currentEraType.Value);
+            SetEraObjectControllersState(currentEraType.Value, false);
         }
 
-        foreach (var eraObjectController in eraTypeToEraObjects[newEraType]) 
-        {
-            eraObjectController.EnableObject();
-        }
-
+        SetEraObjectControllersState(newEraType, true);
         currentEraType = newEraType;
     }    
 
     private void DisableAllEraObjectControllers()
     {
-        eraTypeToEraObjects.Keys.ToList().ForEach(eraTypeToDisable => DisableEraObjectControllersByKey(eraTypeToDisable));
+        eraTypeToEraObjects.Keys.ToList().ForEach(eraTypeToDisable => SetEraObjectControllersState(eraTypeToDisable, false));
     }
 
-    private void DisableEraObjectControllersByKey(EraType eraTypeToDisable)
+    private void SetEraObjectControllersState(EraType eraType, bool isEnabled)
     {
-            foreach (var eraObjectController in eraTypeToEraObjects[eraTypeToDisable]) 
+        foreach (var eraObjectController in eraTypeToEraObjects[eraType]) 
+        {
+            if (isEnabled)
+            {
+                eraObjectController.EnableObject();
+            }
+            else
             {
                 eraObjectController.DisableObject();
             }
+        }
     }
 
     private void PopulateEraTypeToTag()
