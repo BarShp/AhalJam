@@ -9,7 +9,6 @@ public class Lever : InteractableComponent
 
     public override void OnInteract()
     {
-        //Anyotherlogicappliestolever
         OnInteractHandler?.Invoke();
     }
 }
