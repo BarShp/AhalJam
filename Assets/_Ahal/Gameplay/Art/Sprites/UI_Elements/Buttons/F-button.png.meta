@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6bd537540ef2d684c91f07b23e8d86de
+guid: 55d3874c0282811449a37c205fd5db16
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,11 +123,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: roperight_0
+      name: F-button_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
+        x: 0
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -137,35 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 954f0e31ec8752d4b92137e78c9e4f2a
-      internalID: -454546036
+      spriteID: 58bec9fe90fb94349a211a974292306c
+      internalID: 346802601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roperight_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75527251debaeba4482c67dacdcdd1a5
-      internalID: 962029726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: roperight_2
+      name: F-button_1
       rect:
         serializedVersion: 2
         x: 32
@@ -179,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84c7ffc672c77f84b9c9235326434155
-      internalID: -900388838
+      spriteID: 3d2225157f0dc8846b57f8ade0605ddf
+      internalID: -384775184
       vertices: []
       indices: 
       edges: []
@@ -188,7 +167,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d94501590fb5da5478b50f9a3a1d998a
+    spriteID: f8eaf6064a65c0d48bf1beed895a81c6
     internalID: 0
     vertices: []
     indices: 
@@ -196,9 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      roperight_0: -454546036
-      roperight_1: 962029726
-      roperight_2: -900388838
+      F-button_0: 346802601
+      F-button_1: -384775184
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

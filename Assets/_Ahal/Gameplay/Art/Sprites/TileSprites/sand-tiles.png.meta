@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e33c127ba85ee4f53b3997a78b624ce9
+guid: 853f4a5fa05cd5e49bd36b8f54b097c5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: door-Sheet_0
+      name: sand-tiles_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 96
-        height: 96
+        x: 32
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,125 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5eecd850e7d5b4deeabe9bd39647f006
-      internalID: 1002254384
+      spriteID: 4e09e35743757264fa6467f8a6c62402
+      internalID: -1917693527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door-Sheet_1
+      name: sand-tiles_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c1f65269057a547b4b54e5cc846c43
+      internalID: 101326968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sand-tiles_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dcdff702cc417c49bba4f9875b36f1b
+      internalID: -844657665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sand-tiles_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee865e90f40ee6f4097652adb4b199a5
+      internalID: -578833318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sand-tiles_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa9bdd98088eb744c8e5a5c8c241003e
+      internalID: -1376234077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sand-tiles_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6b893f479e0434390419957de742e2
+      internalID: 16356904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sand-tiles_6
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
-        width: 96
-        height: 96
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 797daa4657d014e92aef416e6fb61120
-      internalID: 1853410786
+      spriteID: a15b85efa7f6e2c44a832691bf8f2671
+      internalID: -1849260473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door-Sheet_2
+      name: sand-tiles_7
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 96
-        height: 96
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14f09b1095bda4e5eb6463b4c91e14d4
-      internalID: 892077422
+      spriteID: 642d4b7661e6a114e9fe01e1c673eee0
+      internalID: 12779906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door-Sheet_3
+      name: sand-tiles_8
       rect:
         serializedVersion: 2
-        x: 288
-        y: 0
-        width: 96
-        height: 96
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b87fa32569914ab0aea73b6b95183c0
-      internalID: -1378588162
+      spriteID: f28d69333c0884547921a113d1c65808
+      internalID: -1313525674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door-Sheet_4
+      name: sand-tiles_9
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 96
-        height: 96
+        x: 96
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 479408f840d0c41d28a398c46db7cd7b
-      internalID: -1827825748
+      spriteID: 8c758ff6c557f0f4cb56cbf59c3b71fb
+      internalID: 862994865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door-Sheet_5
+      name: sand-tiles_10
       rect:
         serializedVersion: 2
-        x: 480
-        y: 0
-        width: 96
-        height: 96
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +347,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7480e2b129a434a3096bc5d0c23f88d1
-      internalID: -1407741427
+      spriteID: 6e4b5ca21a7f92c46905dbc82b92a182
+      internalID: -1511066141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door-Sheet_6
+      name: sand-tiles_11
       rect:
         serializedVersion: 2
-        x: 576
-        y: 0
-        width: 96
-        height: 96
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +368,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b59a10f39eaa140d7939ef26f9e348d6
-      internalID: 1214863818
+      spriteID: e0159a0026a37a74686fcd72d3816c34
+      internalID: 1870556263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door-Sheet_7
+      name: sand-tiles_12
       rect:
         serializedVersion: 2
-        x: 672
-        y: 0
-        width: 96
-        height: 96
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,92 +389,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 580ceeea9c2c84483a90f95983dc22dc
-      internalID: 1945281143
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: door-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eda82a723474449cfa145edf047ce05d
-      internalID: 994750678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: door-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 864
-        y: 0
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64a8ac7dd5e7e4e12a9729673521ebc2
-      internalID: -1724682430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: door-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cec1afbedab824d02b9889836deef31d
-      internalID: 1663135797
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: door-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 1056
-        y: 0
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f995b8d44739476aa0f447c6f7fd5ba
-      internalID: -1928883340
+      spriteID: ed08a5ffa0c893a4088bc83175621b16
+      internalID: 598294011
       vertices: []
       indices: 
       edges: []
@@ -377,7 +398,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 196947e47c32b427eb7b19cbc312ad62
+    spriteID: 5e771f8272de1d843a532eb8159160db
     internalID: 0
     vertices: []
     indices: 
@@ -385,18 +406,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      door-Sheet_0: 1002254384
-      door-Sheet_1: 1853410786
-      door-Sheet_10: 1663135797
-      door-Sheet_11: -1928883340
-      door-Sheet_2: 892077422
-      door-Sheet_3: -1378588162
-      door-Sheet_4: -1827825748
-      door-Sheet_5: -1407741427
-      door-Sheet_6: 1214863818
-      door-Sheet_7: 1945281143
-      door-Sheet_8: 994750678
-      door-Sheet_9: -1724682430
+      sand-tiles_0: -1917693527
+      sand-tiles_1: 101326968
+      sand-tiles_10: -1511066141
+      sand-tiles_11: 1870556263
+      sand-tiles_12: 598294011
+      sand-tiles_2: -844657665
+      sand-tiles_3: -578833318
+      sand-tiles_4: -1376234077
+      sand-tiles_5: 16356904
+      sand-tiles_6: -1849260473
+      sand-tiles_7: 12779906
+      sand-tiles_8: -1313525674
+      sand-tiles_9: 862994865
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
