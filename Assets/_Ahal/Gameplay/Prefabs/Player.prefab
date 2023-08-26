@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayPoint: {fileID: 178930263833912765}
   boxHolder: {fileID: 7686880302618498765}
-  rayDistance: 1.5
+  rayDistance: 0.5
 --- !u!1 &5429299259892574152
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ Transform:
   m_GameObject: {fileID: 5429299259892574152}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: -0.05, z: 0}
+  m_LocalPosition: {x: 0.297, y: -0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
