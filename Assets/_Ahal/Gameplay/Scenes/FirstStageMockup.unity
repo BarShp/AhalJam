@@ -929,7 +929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -147.4615, y: -39.4872}
+  m_AnchoredPosition: {x: -144, y: -51}
   m_SizeDelta: {x: -310.282, y: 89.0257}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &365448810
@@ -979,8 +979,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.2
-  m_fontSizeBase: 29.2
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 48.042236, y: 8.000168, z: 114.43445, w: -32.03891}
+  m_margin: {x: 67.18042, y: 8.000168, z: 242.0221, w: -51.17708}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1582,8 +1582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16403986a51a0c438f8b10c37f69043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AgentDialogue: {fileID: 0}
-  SphinxDialogue: {fileID: 0}
+  AgentDialogue: {fileID: 1841199539}
+  SphinxDialogue: {fileID: 581877604}
 --- !u!4 &576158022
 Transform:
   m_ObjectHideFlags: 0
@@ -1634,8 +1634,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -541.45, y: 225.55}
-  m_SizeDelta: {x: 1082.9064, y: 451.0934}
+  m_AnchoredPosition: {x: -667.91, y: 278.23}
+  m_SizeDelta: {x: 1335.8295, y: 556.4506}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581877606
 MonoBehaviour:
@@ -2979,9 +2979,9 @@ MonoBehaviour:
     Message: AHAL?
   actors:
   - name: Agent
-    dialogueBox: {fileID: 0}
+    dialogueBox: {fileID: 1841199539}
   - name: Sphinx
-    dialogueBox: {fileID: 0}
+    dialogueBox: {fileID: 581877604}
 --- !u!4 &1048299714
 Transform:
   m_ObjectHideFlags: 0
@@ -3938,8 +3938,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 568.0242, y: 209.49707}
-  m_SizeDelta: {x: 1005.8484, y: 418.9941}
+  m_AnchoredPosition: {x: 767, y: 258.42706}
+  m_SizeDelta: {x: 1240.7737, y: 516.8541}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1841199541
 MonoBehaviour:
@@ -4507,8 +4507,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.2
-  m_fontSizeBase: 29.2
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4543,7 +4543,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 87.5943, y: -1.5450745, z: 0, w: 4.55822}
+  m_margin: {x: 180.42401, y: 0.5814209, z: 46.782104, w: -15.51339}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
