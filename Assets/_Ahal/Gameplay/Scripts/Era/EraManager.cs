@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class EraManager : MonoBehaviour
 {
@@ -64,8 +65,26 @@ public class EraManager : MonoBehaviour
         foreach (var eraTypeToTag in eraTypeToTags)
         {
             var eraObjects = GameObject.FindGameObjectsWithTag(eraTypeToTag.Value);
-            var eraObjectControllers = eraObjects.Select(eraObject => eraObject.GetComponent<EraObjectController>());
+            var eraObjectControllers = GetEraObjectControllerList(eraObjects);
             eraTypeToEraObjects[eraTypeToTag.Key] = eraObjectControllers.ToList();
         }
+    }
+
+    private List<EraObjectController> GetEraObjectControllerList(GameObject[] gameObjects)
+    {
+        List<EraObjectController> eraObjectControllersList = new();
+        foreach (GameObject gameObject in gameObjects)
+        {  
+            eraObjectControllersList.Add(gameObject.GetComponent<EraObjectController>());
+            if (gameObject.GetComponent<Tilemap>() != null)
+            {
+                foreach (EraObjectController e in gameObject.GetComponentsInChildren<EraObjectController>())
+                {
+                    eraObjectControllersList.Add(e);
+                }
+            }
+        }
+
+        return eraObjectControllersList;
     }
 }
