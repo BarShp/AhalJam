@@ -8,6 +8,9 @@ public class PlayerPull : MonoBehaviour
     [SerializeField] Transform boxHolder;
     [SerializeField] float rayDistance;
 
+    public bool IsGrabbingObject => grabbedObject != null;
+    public Vector2 GrabbedObjectDirection => (grabbedObject.transform.position - transform.position).normalized;
+    
     private GameObject grabbedObject;
     private int layerIndex;
 

@@ -120,6 +120,21 @@ public class PlayerMovement2D : MonoBehaviour
 
     private void UpdateAnimationState()
     {
+        if (playerPull.IsGrabbingObject)
+        {
+            if (Mathf.Approximately(horizontalDir.magnitude, 0) ||
+                Mathf.Approximately(Mathf.Sign(playerPull.GrabbedObjectDirection.x), Mathf.Sign(horizontalDir.x)))
+            {
+                playerAnimationController.SetPush();
+            }
+            else
+            {
+                playerAnimationController.SetPull();
+            }
+
+            return;
+        }
+        
         if (climbableCollider != null)
         {
             playerAnimationController.SetClimbing();
@@ -270,7 +285,15 @@ public class PlayerMovement2D : MonoBehaviour
 
     private void SetFlip()
     {
+        if (Mathf.Approximately(horizontalDir.magnitude, 0)) return;
+        
         var shouldFlip = horizontalInput < 0;
+
+        if (playerPull.IsGrabbingObject)
+        {
+            shouldFlip = playerPull.GrabbedObjectDirection.x < 0;
+        }
+        
         spriteRenderer.flipX = shouldFlip;
         playerPull.FlipX = shouldFlip;
     }
