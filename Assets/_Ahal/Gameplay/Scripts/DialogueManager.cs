@@ -51,6 +51,8 @@ public class DialogueManager : MonoBehaviour
         else
         {
             isActive = false;
+            currentActors[currentActorId].dialogueBox.SetActive(false);
+    
         }
     }
     void Start()
