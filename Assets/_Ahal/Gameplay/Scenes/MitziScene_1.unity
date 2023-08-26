@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1886,6 +1886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimationController: {fileID: 0}
+  playerPull: {fileID: 0}
   rb: {fileID: 2009625787}
   spriteRenderer: {fileID: 2009625789}
   speed: 8
@@ -1893,12 +1894,16 @@ MonoBehaviour:
   horizontalJumpForce: 5
   wallSlidingSpeed: 2
   maxCoyoteTime: 0.2
+  maxHorizontalSpeed: 30
+  maxVerticalSpeed: 20
+  scaleFactor: 0.1
   jumpableGround:
     serializedVersion: 2
     m_Bits: 0
   jumpableWall:
     serializedVersion: 2
     m_Bits: 0
+  disableControls: 0
 --- !u!61 &2009625794
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1957,6 +1962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayPoint: {fileID: 1489206907}
+  boxHolder: {fileID: 0}
   rayDistance: 0.2
 --- !u!1 &2120453506
 GameObject:
@@ -2284,11 +2290,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5289584062235683536, guid: d64d2d0b4efa74073b2cf3e91f3c2f31, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5289584062235683536, guid: d64d2d0b4efa74073b2cf3e91f3c2f31, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5289584062235683536, guid: d64d2d0b4efa74073b2cf3e91f3c2f31, type: 3}
       propertyPath: m_LocalPosition.x

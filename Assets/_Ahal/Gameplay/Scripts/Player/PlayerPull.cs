@@ -11,16 +11,37 @@ public class PlayerPull : MonoBehaviour
     private GameObject grabbedObject;
     private int layerIndex;
 
+    private Vector3 originalRayPointLocalPos;
+    private Vector3 originalBoxHolderLocalPos;
+
+    private bool _flipX;
+    public bool FlipX
+    {
+        get => _flipX;
+        set
+        {
+            if (value == _flipX) return;
+            _flipX = value;
+            var flipMultiplier = value ? -1 : 1;
+            rayPoint.transform.SetLocalX(originalRayPointLocalPos.x * flipMultiplier);
+            boxHolder.transform.SetLocalX(originalBoxHolderLocalPos.x * flipMultiplier);
+        }
+    }
 
     void Start()
     {
         layerIndex = LayerMask.NameToLayer("PullableObjects");
+
+        originalRayPointLocalPos = rayPoint.localPosition;
+        originalBoxHolderLocalPos = boxHolder.localPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, transform.right, rayDistance);
+        var rayDir = _flipX ? -transform.right : transform.right;
+        
+        RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, rayDir, rayDistance);
 
         if (hitInfo.collider != null && hitInfo.collider.gameObject.layer == layerIndex)
         {
@@ -42,7 +63,6 @@ public class PlayerPull : MonoBehaviour
                 }       
             }
         }      
-        Debug.DrawRay(rayPoint.position, transform.right * rayDistance);
+        Debug.DrawRay(rayPoint.position, rayDir * rayDistance);
     }
-
 }

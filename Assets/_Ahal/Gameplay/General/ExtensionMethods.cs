@@ -20,10 +20,10 @@ public static class ExtensionMethods
         return (layerMask & 1 << layer) > 0;
     }
     
-    public static void SetX(this Transform t, float x)
+    public static void SetLocalX(this Transform t, float x)
     {
-        var position = t.position;
-        position.x = x;
-        t.position = position;
+        var localPosition = t.localPosition;
+        localPosition.x = x;
+        t.localPosition = localPosition;
     }
 }
