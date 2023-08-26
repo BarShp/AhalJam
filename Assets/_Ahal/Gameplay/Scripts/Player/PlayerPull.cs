@@ -51,7 +51,7 @@ public class PlayerPull : MonoBehaviour
 
         if (hitInfo.collider != null && hitInfo.collider.gameObject.layer == layerIndex)
         {
-            if (Input.GetKeyDown(KeyCode.G))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 if (grabbedObject == null)
                 {
