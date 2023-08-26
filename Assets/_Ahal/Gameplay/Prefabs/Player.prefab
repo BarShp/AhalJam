@@ -54,7 +54,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 1
-  m_GravityScale: 10
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -98,18 +98,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.4037416, y: 1.2007585}
+  m_Offset: {x: 0, y: -0.07572532}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5494208, y: 3.42595}
+  m_Size: {x: 0.55121994, y: 0.80082655}
   m_EdgeRadius: 0
 --- !u!114 &4141466074968336934
 MonoBehaviour:
@@ -126,11 +126,14 @@ MonoBehaviour:
   playerAnimationController: {fileID: 9087933564222602529}
   rb: {fileID: 5209014963273597605}
   spriteRenderer: {fileID: 6855222850182892325}
-  speed: 80
-  jumpForce: 2000
-  horizontalJumpForce: 1000
+  speed: 35
+  jumpForce: 1000
+  horizontalJumpForce: 1300
   wallSlidingSpeed: 2
   maxCoyoteTime: 0.2
+  maxHorizontalSpeed: 5.5
+  maxVerticalSpeed: 20
+  scaleFactor: 0.1
   jumpableGround:
     serializedVersion: 2
     m_Bits: 8
@@ -193,7 +196,7 @@ Transform:
   m_GameObject: {fileID: 5429299259892574152}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.83, y: 0.99, z: 0}
+  m_LocalPosition: {x: 0.25, y: -0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -226,8 +229,8 @@ Transform:
   m_GameObject: {fileID: 5752892233707446855}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.381, y: 1.381, z: 0}
-  m_LocalScale: {x: 3.761964, y: 3.761964, z: 3.761964}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5289584062235683536}
@@ -330,7 +333,7 @@ Transform:
   m_GameObject: {fileID: 8197241053649573081}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.61, y: 2.03, z: 0}
+  m_LocalPosition: {x: 0.41000056, y: -0.04000023, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -85,14 +85,14 @@ public class PlayerMovement2D : MonoBehaviour
 
         // Calculate target scale based on squash/stretch
 
-        var currentScale = transform.localScale;
+        var currentScale = spriteRenderer.transform.localScale;
         
-        var targetScale = new Vector2(currentScale.x, currentScale.y * squashFactor);
+        var targetScale = new Vector2(1, squashFactor);
 
         // Smoothly interpolate scale and apply it
         var transitionSpeed = 10.0f; // Adjust as needed
         var newScale = Vector2.Lerp(currentScale, targetScale, Time.fixedDeltaTime * transitionSpeed);
-        transform.localScale = newScale;
+        spriteRenderer.transform.localScale = newScale;
     }
 
     private void SetHorizontalInput()
