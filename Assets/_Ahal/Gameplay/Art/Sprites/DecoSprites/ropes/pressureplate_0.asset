@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: box 3
+  m_Name: pressureplate_0
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1841551335, guid: 4dcf946a7390a6442b68fb695f742062, type: 3}
+  m_Sprite: {fileID: 572466892, guid: a4ce805d084d324499af3676237a2b64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c38bc162da4db494387a6a4ff6ccf66b
+guid: a4ce805d084d324499af3676237a2b64
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,22 +123,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: extra rock_0
+      name: pressureplate_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 23
-        width: 52
-        height: 18
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e5c1a6ce732e8449bc88c84534c67fe
-      internalID: -43208800
+      spriteID: 651e136a2d24faf499adccaed83eb05d
+      internalID: 572466892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pressureplate_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aba99adea2f5e65419770e1ff4edd77a
+      internalID: 524618010
       vertices: []
       indices: 
       edges: []
@@ -146,7 +167,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 9329b7cd685b0414eb438ca5e93d1bdd
+    spriteID: 930bd11e0b5efd044b1180402e661929
     internalID: 0
     vertices: []
     indices: 
@@ -154,7 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      extra rock_0: -43208800
+      pressureplate_0: 572466892
+      pressureplate_1: 524618010
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
