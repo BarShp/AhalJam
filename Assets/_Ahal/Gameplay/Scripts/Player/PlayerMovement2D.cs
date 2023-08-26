@@ -267,6 +267,25 @@ public class PlayerMovement2D : MonoBehaviour
     {
         var horizontalMovement = horizontalDir;
         
+        if (playerPull.grabbedObject != null)
+        {
+            // Calculate the position where you want to move the grabbed object
+            Vector2 targetPosition = rb.position + horizontalDir * (speed * Time.fixedDeltaTime);
+
+            // Calculate the distance to the grabbed object
+            Vector2 toObject = (Vector2)playerPull.grabbedObject.transform.position - targetPosition;
+            float distance = toObject.magnitude;
+
+            // Check if there are any colliders between the player and the grabbed object
+            RaycastHit2D hit = Physics2D.Raycast(targetPosition, toObject.normalized, distance, jumpableGround | jumpableWall);
+
+            if (hit.collider != null)
+            {
+                // There is a collider in the way, prevent movement
+                horizontalMovement = Vector2.zero;
+            }
+        }
+        
         if (CheckGround(horizontalDir) || CheckWall(horizontalDir))
         {
             // Slide if you're going into a wall (or side of ground)
