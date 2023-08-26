@@ -94,6 +94,7 @@ public class PlayerMovement2D : MonoBehaviour
     public void DisablePlayerControls()
     {
         rb.velocity = new Vector3(0,0,0);        
+        playerAnimationController.SetIdle();
         disableControls = true;
     }
     private void SquashAndStretch()

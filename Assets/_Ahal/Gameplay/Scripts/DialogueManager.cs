@@ -21,13 +21,14 @@ public class DialogueManager : MonoBehaviour
         activeMessage = 0;
         isActive = true;
         DisplayMessage();
+        
     }
 
     private void DisplayMessage()
     {
         DialogueMessage messageToDisplay = currentMessages[activeMessage];
         Actor actorToDisplay = currentActors[messageToDisplay.ActorId];
-        if (currentActorId != messageToDisplay.ActorId)
+        if (currentActorId != messageToDisplay.ActorId || activeMessage == 0)
         {
             for (int i = 0; i < currentActors.Length; i++)
             {
