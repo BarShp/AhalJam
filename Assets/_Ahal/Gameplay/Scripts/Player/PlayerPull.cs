@@ -35,6 +35,7 @@ public class PlayerPull : MonoBehaviour
                 }             
                 else
                 {
+                    grabbedObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                     grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
                     grabbedObject.transform.SetParent(null);
                     grabbedObject = null;
