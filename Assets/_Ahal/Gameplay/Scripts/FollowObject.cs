@@ -8,6 +8,9 @@ public class FollowObject : MonoBehaviour
 
     public void Update()
     {
-        transform.position = transformToFollow.position;
+        // Ignore z in this script, too lazy to write it better now, quick hack
+        var newPosition = transformToFollow.position;
+        newPosition.z = transform.position.z;
+        transform.position = newPosition;
     }
 }
