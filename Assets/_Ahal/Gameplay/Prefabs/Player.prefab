@@ -133,7 +133,7 @@ MonoBehaviour:
   maxCoyoteTime: 0.2
   maxHorizontalSpeed: 5.5
   maxVerticalSpeed: 20
-  scaleFactor: 0.1
+  scaleFactor: 0
   jumpableGround:
     serializedVersion: 2
     m_Bits: 8
