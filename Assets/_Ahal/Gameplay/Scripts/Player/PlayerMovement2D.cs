@@ -2,11 +2,12 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Rigidbody2D),typeof(BoxCollider2D))]
 public class PlayerMovement2D : MonoBehaviour
 {
     [SerializeField] private PlayerAnimationController playerAnimationController;
+    [SerializeField] private PlayerPull playerPull;
+    
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float speed = 8f;
@@ -64,7 +65,7 @@ public class PlayerMovement2D : MonoBehaviour
         
         UpdateJump();
         
-        SetSpriteFlip();
+        SetFlip();
     }
 
     private void FixedUpdate()
@@ -170,9 +171,11 @@ public class PlayerMovement2D : MonoBehaviour
         rb.AddForce(moveDir);
     }
 
-    private void SetSpriteFlip()
+    private void SetFlip()
     {
-        spriteRenderer.flipX = horizontalInput < 0;
+        var shouldFlip = horizontalInput < 0;
+        spriteRenderer.flipX = shouldFlip;
+        playerPull.FlipX = shouldFlip;
     }
 
     private bool CheckGround(Vector2 dir) => CheckColliders(dir, jumpableGround); 
