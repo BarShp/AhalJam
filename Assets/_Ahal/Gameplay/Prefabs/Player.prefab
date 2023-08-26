@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimationController: {fileID: 9087933564222602529}
+  playerPull: {fileID: 6726901289560074418}
   rb: {fileID: 5209014963273597605}
   spriteRenderer: {fileID: 6855222850182892325}
   speed: 35
