@@ -10,7 +10,7 @@ public class NextSceneTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.GetComponent<Rigidbody2D>().velocity = Vector2.zero;            
-            other.GetComponent<PlayerMovement2D>().disableControls = true;
+            other.GetComponent<PlayerMovement2D>().DisablePlayerControls();
             this.MonoWaitForSeconds(
                 () => FindObjectOfType<SceneController>().MoveScene(nextSceneIndex),
                 delayTime

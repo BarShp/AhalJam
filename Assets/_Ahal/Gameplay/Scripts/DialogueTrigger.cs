@@ -15,7 +15,7 @@ public class DialogueTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player") && isTriggered == false) 
         {
-            other.gameObject.GetComponent<PlayerMovement2D>().disableControls = true;
+            other.gameObject.GetComponent<PlayerMovement2D>().DisablePlayerControls();
             StartDialogue();
             isTriggered = true;
         }
