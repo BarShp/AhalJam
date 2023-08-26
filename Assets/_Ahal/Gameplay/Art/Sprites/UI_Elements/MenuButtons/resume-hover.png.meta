@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0e0d620f296e7c84297b1f090bdceda3
+guid: d2d8bdc8a64d05743b834734314eacd3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,19 +81,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: resume_0
+      name: resume-hover_0
       rect:
         serializedVersion: 2
         x: 18
@@ -137,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60b042457c78c204eb52c895eeee79fb
-      internalID: -141526495
+      spriteID: 4fcb5f03476a88241bde0a5cc6ec8531
+      internalID: 524822785
       vertices: []
       indices: 
       edges: []
@@ -146,7 +133,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 9f842791cd09cda40b9e7b9618b8ae00
     internalID: 0
     vertices: []
     indices: 
@@ -154,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      resume_0: -141526495
+      resume-hover_0: 524822785
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
