@@ -7,7 +7,11 @@ using UnityEngine.SceneManagement;
 public class PlayerDamageble : DamageableComponent
 {
     [SerializeField] private PlayerHealthUI playerHealthUI;
+    [SerializeField] private PlayerMovement2D playerMovement2D;
+    [SerializeField] private PlayerAnimationController playerAnimationController;
+    
     [SerializeField] int maxHealth = 3;
+    [SerializeField] float hurtMovementCooldown;
     
     private int currentHealth = 0;
 
@@ -18,13 +22,21 @@ public class PlayerDamageble : DamageableComponent
     
     public override void OnDamage()
     {
-        SetHealth(currentHealth-1);
+        SetHealth(currentHealth - 1);
         
         if (currentHealth <= 0)
         {
-            // TODO: Temporary demo, should have values according to Animations or something~
+            playerAnimationController.SetDeath();
+            playerMovement2D.disableControls = true;
             this.MonoWaitForSeconds(DeathHandler, 2f);
+            return;
         }
+        
+        playerAnimationController.SetHurt();
+        playerMovement2D.disableControls = true;
+        this.MonoWaitForSeconds(
+            () => playerMovement2D.disableControls = false,
+            hurtMovementCooldown);
     }
 
     private void SetHealth(int value)

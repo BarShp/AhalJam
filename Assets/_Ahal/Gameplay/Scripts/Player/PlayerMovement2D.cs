@@ -170,9 +170,6 @@ public class PlayerMovement2D : MonoBehaviour
             playerAnimationController.SetIdle();
             return;
         }
-        
-        // TODO: On death disable the movement component;
-        // TODO: On hurt disable the movement component for x seconds;
     }
 
     private void UpdateClimb()
@@ -208,12 +205,6 @@ public class PlayerMovement2D : MonoBehaviour
         climbableProgress = Mathf.Clamp(climbableProgress, 0, 1);
         
         transform.position = Vector2.Lerp(bottomOfClimbable, topOfClimbable, climbableProgress);
-        
-        // else 
-        // If max up - don't do anything
-        // If max down - drop
-        // If jump - back to non kinematic
-
     }
 
     private void UpdateJump()
@@ -275,8 +266,6 @@ public class PlayerMovement2D : MonoBehaviour
             // Slide if you're going into a wall (or side of ground)
             horizontalMovement = Vector2.zero;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
-            
-            // TODO: Set animation sliding
         }
         
         var moveDir = horizontalMovement * speed;

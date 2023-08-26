@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4141466074968336934}
   - component: {fileID: 9087933564222602529}
   - component: {fileID: 6726901289560074418}
+  - component: {fileID: 6379634244740205936}
+  - component: {fileID: 121517426965448410}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -185,6 +187,36 @@ MonoBehaviour:
   rayPoint: {fileID: 178930263833912765}
   boxHolder: {fileID: 7686880302618498765}
   rayDistance: 0.5
+--- !u!114 &6379634244740205936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739619318183124921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468211382b1c1be44bf911b2df77cf99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealthUI: {fileID: 121517426965448410}
+  playerMovement2D: {fileID: 4141466074968336934}
+  playerAnimationController: {fileID: 9087933564222602529}
+  maxHealth: 3
+  hurtMovementCooldown: 0.5
+--- !u!114 &121517426965448410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739619318183124921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3646a58e26f8f484a947894d28f6bcc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthUIParts: []
 --- !u!1 &5429299259892574152
 GameObject:
   m_ObjectHideFlags: 0
