@@ -2,8 +2,11 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class PlayerMovement2D : MonoBehaviour
 {
+    [SerializeField] private PlayerAnimationController playerAnimationController;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float speed = 8f;
@@ -18,12 +21,13 @@ public class PlayerMovement2D : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask jumpableWall;
     
+    public bool disableControls = false;
+
     private BoxCollider2D coll;
     private float horizontalInput;
     private Vector2 horizontalDir;
     private bool IsGrounded => CheckGround(Vector2.down);
     private bool isLastTouchWall = false;
-    
     // private float currentJumpCooldown;
     private float currentCoyoteTime;
 
@@ -38,6 +42,7 @@ public class PlayerMovement2D : MonoBehaviour
 
     void Update()
     {
+        if (disableControls) return;
         SetHorizontalInput();
 
         if (IsGrounded)
@@ -64,6 +69,7 @@ public class PlayerMovement2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (disableControls) return;
         UpdateMovement();
         rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxHorizontalSpeed, maxHorizontalSpeed), 
                                     Mathf.Clamp(rb.velocity.y, -maxVerticalSpeed, maxVerticalSpeed));
@@ -145,6 +151,19 @@ public class PlayerMovement2D : MonoBehaviour
             // Slide if you're going into a wall (or side of ground)
             horizontalMovement = Vector2.zero;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+            
+            // TODO: Set animation sliding
+        }
+        else
+        {
+            if (horizontalMovement == Vector2.zero)
+            {
+                playerAnimationController.SetIdle();
+            }
+            else
+            {
+                playerAnimationController.SetRun();
+            }
         }
         
         var moveDir = horizontalMovement * speed;
@@ -153,7 +172,7 @@ public class PlayerMovement2D : MonoBehaviour
 
     private void SetSpriteFlip()
     {
-        spriteRenderer.flipX = horizontalInput > 0;
+        spriteRenderer.flipX = horizontalInput < 0;
     }
 
     private bool CheckGround(Vector2 dir) => CheckColliders(dir, jumpableGround); 
