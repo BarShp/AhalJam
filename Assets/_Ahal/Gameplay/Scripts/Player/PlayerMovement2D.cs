@@ -18,6 +18,7 @@ public class PlayerMovement2D : MonoBehaviour
     [SerializeField] private float maxHorizontalSpeed = 30;
     [SerializeField] private float maxVerticalSpeed = 20;
     [SerializeField] private float scaleFactor = 0.1f;
+    [SerializeField] private float nudgeForce = 2f;
     
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask jumpableWall;
@@ -89,6 +90,11 @@ public class PlayerMovement2D : MonoBehaviour
         rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxHorizontalSpeed, maxHorizontalSpeed), 
                                     Mathf.Clamp(rb.velocity.y, -maxVerticalSpeed, maxVerticalSpeed));
         SquashAndStretch();
+    }
+
+    public void Nudge(Vector2 direction)
+    {
+        rb.AddForce(direction * nudgeForce);
     }
     
     private void SquashAndStretch()

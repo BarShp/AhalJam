@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerPull : MonoBehaviour
 {
+    [SerializeField] private PlayerMovement2D playerMovement2D;
+    [SerializeField] private LayerMask collideWithLayers;
     [SerializeField] Transform rayPoint;
     [SerializeField] Transform boxHolder;
     [SerializeField] float rayDistance;
@@ -67,5 +70,25 @@ public class PlayerPull : MonoBehaviour
             }
         }      
         Debug.DrawRay(rayPoint.position, rayDir * rayDistance);
+    }
+    
+    void FixedUpdate()
+    {
+        if (grabbedObject != null)
+        {
+            // Check for collisions between the grabbed object and the environment.
+            Collider2D[] colliders = grabbedObject.GetComponents<Collider2D>();
+            foreach (var collider in colliders)
+            {
+                Collider2D[] collidedWith = new Collider2D[2];
+                Physics2D.OverlapCollider(collider, new ContactFilter2D(), collidedWith);
+                var collidedObject = collidedWith.First(c =>c != null && c != collider && collideWithLayers.IsInLayer(c.gameObject.layer));
+                if (collidedObject != null)
+                {
+                    playerMovement2D.Nudge(_flipX ? Vector2.right : Vector2.left);
+                    break;
+                }
+            }
+        }
     }
 }
