@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerPull : MonoBehaviour
 {
     [SerializeField] Transform rayPoint;
+    [SerializeField] Transform boxHolder;
     [SerializeField] float rayDistance;
 
     private GameObject grabbedObject;
@@ -29,6 +30,7 @@ public class PlayerPull : MonoBehaviour
                 {
                     grabbedObject = hitInfo.collider.gameObject;
                     grabbedObject.GetComponent<Rigidbody2D>().isKinematic = true;
+                    grabbedObject.transform.position = boxHolder.position;
                     grabbedObject.transform.SetParent(transform);
                 }             
                 else
