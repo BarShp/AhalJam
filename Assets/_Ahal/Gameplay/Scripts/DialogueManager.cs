@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] GameObject AgentDialogue;
-    [SerializeField] GameObject SphinxDialogue;
     public static bool isActive = false;
     // Start is called before the first frame update
     DialogueMessage[] currentMessages;

@@ -91,6 +91,11 @@ public class PlayerMovement2D : MonoBehaviour
         SquashAndStretch();
     }
     
+    public void DisablePlayerControls()
+    {
+        rb.velocity = new Vector3(0,0,0);        
+        disableControls = true;
+    }
     private void SquashAndStretch()
     {
         // Calculate squash and stretch factor
