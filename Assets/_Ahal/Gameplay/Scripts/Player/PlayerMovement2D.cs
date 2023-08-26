@@ -18,12 +18,13 @@ public class PlayerMovement2D : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask jumpableWall;
     
+    public bool disableControls = false;
+
     private BoxCollider2D coll;
     private float horizontalInput;
     private Vector2 horizontalDir;
     private bool IsGrounded => CheckGround(Vector2.down);
     private bool isLastTouchWall = false;
-    
     // private float currentJumpCooldown;
     private float currentCoyoteTime;
 
@@ -38,6 +39,7 @@ public class PlayerMovement2D : MonoBehaviour
 
     void Update()
     {
+        if (disableControls) return;
         SetHorizontalInput();
 
         if (IsGrounded)
@@ -64,6 +66,7 @@ public class PlayerMovement2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (disableControls) return;
         UpdateMovement();
     }
 
