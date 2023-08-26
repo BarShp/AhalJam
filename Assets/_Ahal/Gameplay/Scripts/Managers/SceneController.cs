@@ -24,7 +24,12 @@ public class SceneController : MonoBehaviour
     {
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
-        SceneManager.LoadScene(nextSceneIndex);
+            SceneManager.LoadScene(nextSceneIndex);
         }
+    }
+
+    public void QuitGame()
+    {
+         Application.Quit();
     }
 }

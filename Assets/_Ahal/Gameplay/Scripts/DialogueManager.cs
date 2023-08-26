@@ -53,7 +53,7 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.V) && isActive)
+        if (Input.GetKeyDown(KeyCode.Space) && isActive)
         {
             NextMessage();
         }
