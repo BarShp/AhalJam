@@ -82,7 +82,8 @@ public class PlayerPull : MonoBehaviour
             {
                 Collider2D[] collidedWith = new Collider2D[2];
                 Physics2D.OverlapCollider(collider, new ContactFilter2D(), collidedWith);
-                var collidedObject = collidedWith.First(c =>c != null && c != collider && collideWithLayers.IsInLayer(c.gameObject.layer));
+
+                var collidedObject = collidedWith.FirstOrDefault(c =>c != null && c != collider && collideWithLayers.IsInLayer(c.gameObject.layer));
                 if (collidedObject != null)
                 {
                     playerMovement2D.Nudge(_flipX ? Vector2.right : Vector2.left);
