@@ -1037,7 +1037,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -144, y: -51}
+  m_AnchoredPosition: {x: -144, y: -36}
   m_SizeDelta: {x: -310.282, y: 89.0257}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706754208
@@ -1095,7 +1095,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1123,7 +1123,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 67.18042, y: 8.000168, z: 242.0221, w: -51.17708}
+  m_margin: {x: 67.18042, y: 16.594406, z: 242.0221, w: -51.17708}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1480,6 +1480,38 @@ MonoBehaviour:
     Message: 'Those are not regular sandals, these are my <b>Sandals of TIME</b>.
 
 '
+  - ActorId: 1
+    Message: ...........
+  - ActorId: 3
+    Message: "Poor mortal, you still can\u2019t comprehend the situation..."
+  - ActorId: 3
+    Message: "That\u2019s fine Let me talk, for now, after that, your mind will relax,
+      and will be able to talk"
+  - ActorId: 1
+    Message: "\u2026 agh gha agh, are you god?"
+  - ActorId: 3
+    Message: "I\u2019m no god of yours, I do possess powers beyond your imagination,
+      but right now I\u2019m hurt and not in the peak of my powers."
+  - ActorId: 1
+    Message: If you are not God what are you? And you said you are hurt?
+  - ActorId: 3
+    Message: I am what your kind call a sphinx...
+  - ActorId: 2
+    Message: ...and with my full power I could do great things but now I can only
+      talk to you, and that is thanks to MY sandals.
+  - ActorId: 1
+    Message: Where are you? Are you inside this Temple?
+  - ActorId: 2
+    Message: "Yes... I\u2019m inside the temple. If you have power and do not fear
+      the way, I need you to help me..."
+  - ActorId: 2
+    Message: ...come and bring me back my sandals.
+  - ActorId: 2
+    Message: But be careful with them, young one. they store a great power within...
+  - ActorId: 1
+    Message: Sure sphinx, I will help you.
+  - ActorId: 1
+    Message: "I\u2019m coming!"
   actors:
   - name: Commentor
     dialogueBox: {fileID: 1125408093}
@@ -1604,7 +1636,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 78, y: -44}
+  m_AnchoredPosition: {x: 78, y: -38}
   m_SizeDelta: {x: -277.359, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226979550
@@ -1662,7 +1694,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -7605,7 +7637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -144, y: -51}
+  m_AnchoredPosition: {x: -144, y: -36}
   m_SizeDelta: {x: -310.282, y: 89.0257}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2035816649
@@ -7663,7 +7695,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
