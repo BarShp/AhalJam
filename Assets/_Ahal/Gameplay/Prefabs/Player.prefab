@@ -187,6 +187,7 @@ MonoBehaviour:
   rayPoint: {fileID: 178930263833912765}
   boxHolder: {fileID: 7686880302618498765}
   rayDistance: 0.5
+  grabbedObject: {fileID: 0}
 --- !u!114 &6379634244740205936
 MonoBehaviour:
   m_ObjectHideFlags: 0
