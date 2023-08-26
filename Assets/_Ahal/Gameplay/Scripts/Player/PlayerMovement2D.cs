@@ -11,6 +11,9 @@ public class PlayerMovement2D : MonoBehaviour
     [SerializeField] private float horizontalJumpForce = 5f;
     [SerializeField] float wallSlidingSpeed = 2f;
     [SerializeField] private float maxCoyoteTime = 0.2f;
+    [SerializeField] private float maxHorizontalSpeed = 30;
+    [SerializeField] private float maxVerticalSpeed = 20;
+    [SerializeField] private float scaleFactor = 0.1f;
     
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask jumpableWall;
@@ -62,6 +65,28 @@ public class PlayerMovement2D : MonoBehaviour
     private void FixedUpdate()
     {
         UpdateMovement();
+        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxHorizontalSpeed, maxHorizontalSpeed), 
+                                    Mathf.Clamp(rb.velocity.y, -maxVerticalSpeed, maxVerticalSpeed));
+        SquashAndStretch();
+    }
+    
+    private void SquashAndStretch()
+    {
+
+        // Calculate squash and stretch factor
+        float verticalVelocity = rb.velocity.y; // Get vertical velocity
+        float squashFactor = 1 - Mathf.Abs(verticalVelocity) * scaleFactor;
+
+        // Calculate target scale based on squash/stretch
+
+        var currentScale = transform.localScale;
+        
+        var targetScale = new Vector2(currentScale.x, currentScale.y * squashFactor);
+
+        // Smoothly interpolate scale and apply it
+        var transitionSpeed = 10.0f; // Adjust as needed
+        var newScale = Vector2.Lerp(currentScale, targetScale, Time.fixedDeltaTime * transitionSpeed);
+        transform.localScale = newScale;
     }
 
     private void SetHorizontalInput()
