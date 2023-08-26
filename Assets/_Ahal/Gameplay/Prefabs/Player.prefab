@@ -162,6 +162,14 @@ MonoBehaviour:
   animatorComponent: {fileID: 4511851198491447026}
   idleBoolParameter: IsIdle
   runBoolParameter: IsRunning
+  climbingBoolParameter: IsClimbing
+  deathBoolParameter: IsDeath
+  hurtBoolParameter: IsHurt
+  jumpingBoolParameter: IsJumping
+  fallingBoolParameter: IsFalling
+  wallSlidingBoolParameter: IsWallSliding
+  pushingBoolParameter: IsPushing
+  pullingBoolParameter: IsPulling
 --- !u!114 &6726901289560074418
 MonoBehaviour:
   m_ObjectHideFlags: 0

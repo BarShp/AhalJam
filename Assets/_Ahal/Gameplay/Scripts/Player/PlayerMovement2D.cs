@@ -78,6 +78,8 @@ public class PlayerMovement2D : MonoBehaviour
         UpdateJump();
         
         SetFlip();
+
+        UpdateAnimationState();
     }
 
     private void FixedUpdate()
@@ -114,6 +116,48 @@ public class PlayerMovement2D : MonoBehaviour
         
         verticalInput = Input.GetAxisRaw("Vertical");
         verticalDir = (Vector2.up * verticalInput).normalized;
+    }
+
+    private void UpdateAnimationState()
+    {
+        if (climbableCollider != null)
+        {
+            playerAnimationController.SetClimbing();
+            return;
+        }
+
+        if (!IsGrounded)
+        {
+            if ((CheckWall(Vector2.left) && horizontalDir.x < 0) ||
+                (CheckWall(Vector2.right) && horizontalDir.x > 0))
+            {
+                playerAnimationController.SetWallSlide();
+                return;    
+            }
+
+            if (rb.velocity.y > 0)
+            {
+                playerAnimationController.SetJump();
+            }
+            else
+            {
+                playerAnimationController.SetFall();
+            }
+        }
+        
+        if (IsGrounded)
+        {
+            if (horizontalDir.magnitude > 0)
+            {
+                playerAnimationController.SetRun();
+                return;
+            }
+            playerAnimationController.SetIdle();
+            return;
+        }
+        
+        // TODO: On death disable the movement component;
+        // TODO: On hurt disable the movement component for x seconds;
     }
 
     private void UpdateClimb()
@@ -218,17 +262,6 @@ public class PlayerMovement2D : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
             
             // TODO: Set animation sliding
-        }
-        else
-        {
-            if (horizontalMovement == Vector2.zero)
-            {
-                playerAnimationController.SetIdle();
-            }
-            else
-            {
-                playerAnimationController.SetRun();
-            }
         }
         
         var moveDir = horizontalMovement * speed;
