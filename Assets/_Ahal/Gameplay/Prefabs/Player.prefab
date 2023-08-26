@@ -141,6 +141,11 @@ MonoBehaviour:
   jumpableWall:
     serializedVersion: 2
     m_Bits: 128
+  climbableLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  climbingSpeed: 0.25
+  climbingSideJumpForce: 40
   disableControls: 0
 --- !u!114 &9087933564222602529
 MonoBehaviour:

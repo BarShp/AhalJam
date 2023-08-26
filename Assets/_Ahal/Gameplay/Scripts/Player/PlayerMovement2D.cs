@@ -22,21 +22,31 @@ public class PlayerMovement2D : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask jumpableWall;
     
+    [SerializeField] private LayerMask climbableLayer;
+    [SerializeField] private float climbingSpeed = 2f;
+    [SerializeField] private float climbingSideJumpForce = 2f;
+    
     public bool disableControls = false;
 
-    private BoxCollider2D coll;
+    private BoxCollider2D boxCollider;
+    
     private float horizontalInput;
     private Vector2 horizontalDir;
+    private float verticalInput;
+    private Vector2 verticalDir;
+    
     private bool IsGrounded => CheckGround(Vector2.down);
     private bool isLastTouchWall = false;
-    // private float currentJumpCooldown;
     private float currentCoyoteTime;
 
     private bool didJump;
+
+    private CompositeCollider2D climbableCollider;
+    private float climbableProgress = 0;
     
     private void Start()
     {
-        coll = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         // currentJumpCooldown = maxJumpCooldown;
     }
@@ -44,8 +54,10 @@ public class PlayerMovement2D : MonoBehaviour
     void Update()
     {
         if (disableControls) return;
-        SetHorizontalInput();
+        SetAxisInput();
 
+        UpdateClimb();
+        
         if (IsGrounded)
         {
             isLastTouchWall = false;
@@ -79,7 +91,6 @@ public class PlayerMovement2D : MonoBehaviour
     
     private void SquashAndStretch()
     {
-
         // Calculate squash and stretch factor
         float verticalVelocity = rb.velocity.y; // Get vertical velocity
         float squashFactor = 1 - Mathf.Abs(verticalVelocity) * scaleFactor;
@@ -96,10 +107,54 @@ public class PlayerMovement2D : MonoBehaviour
         spriteRenderer.transform.localScale = newScale;
     }
 
-    private void SetHorizontalInput()
+    private void SetAxisInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         horizontalDir = (Vector2.right * horizontalInput).normalized;
+        
+        verticalInput = Input.GetAxisRaw("Vertical");
+        verticalDir = (Vector2.up * verticalInput).normalized;
+    }
+
+    private void UpdateClimb()
+    {
+        if (verticalDir == Vector2.zero) return;
+        if (climbableCollider == null)
+        {
+            if (!TryGetClimbable(Vector2.zero, out Transform hitTransform)) return;
+
+            climbableCollider = hitTransform.GetComponent<CompositeCollider2D>();
+
+            var newTopOfClimbable = climbableCollider.bounds.center + Vector3.up * climbableCollider.bounds.size.y/2;
+            var newBottomOfClimbable = climbableCollider.bounds.center - Vector3.up * climbableCollider.bounds.size.y/2;
+            climbableProgress = Mathf.InverseLerp(newBottomOfClimbable.y, newTopOfClimbable.y, transform.position.y);
+            
+            rb.velocity = Vector2.zero;
+            rb.isKinematic = true;
+            transform.SetX(climbableCollider.bounds.center.x);
+            didJump = false;
+            return;
+        }
+
+        var topOfClimbable = climbableCollider.bounds.center + Vector3.up * climbableCollider.bounds.size.y/2;
+        var bottomOfClimbable = climbableCollider.bounds.center - Vector3.up * climbableCollider.bounds.size.y/2;
+        climbableProgress += verticalDir.y * climbingSpeed * Time.deltaTime;
+
+        if (climbableProgress < 0)
+        {
+            DetachClimbable();
+            return;
+        }
+
+        climbableProgress = Mathf.Clamp(climbableProgress, 0, 1);
+        
+        transform.position = Vector2.Lerp(bottomOfClimbable, topOfClimbable, climbableProgress);
+        
+        // else 
+        // If max up - don't do anything
+        // If max down - drop
+        // If jump - back to non kinematic
+
     }
 
     private void UpdateJump()
@@ -107,6 +162,15 @@ public class PlayerMovement2D : MonoBehaviour
         if (didJump) return; 
         
         if (!Input.GetButtonDown("Jump")) return;
+        
+        if (climbableCollider != null)
+        {
+            DetachClimbable();
+            var climbingSideJumpDir = horizontalDir.magnitude > 0.01f ? horizontalDir : Vector2.right; 
+            rb.AddForce(Vector2.up * jumpForce + climbingSideJumpDir * climbingSideJumpForce);
+            didJump = true;
+            return;
+        }
         
         if (IsGrounded)
         {
@@ -178,13 +242,27 @@ public class PlayerMovement2D : MonoBehaviour
         playerPull.FlipX = shouldFlip;
     }
 
-    private bool CheckGround(Vector2 dir) => CheckColliders(dir, jumpableGround); 
-
-    private bool CheckWall(Vector2 dir) => CheckColliders(dir, jumpableWall);
-
-    private bool CheckColliders(Vector2 dir, LayerMask layer)
+    private void DetachClimbable()
     {
-        return Physics2D.BoxCast(coll.bounds.center, (Vector2)coll.bounds.size, 0f, dir.normalized, 0.1f, layer);
+        climbableCollider = null;
+        rb.isKinematic = false;
+    }
+
+    private bool TryGetClimbable(Vector2 dir, out Transform hitTransform)
+    {
+        hitTransform = null;
+        var hitInfo = BoxCast(dir, climbableLayer);
+        if (!hitInfo) return false;
+        hitTransform = hitInfo.transform;
+        return true;
+    } 
+    
+    private bool CheckGround(Vector2 dir) => BoxCast(dir, jumpableGround);
+    private bool CheckWall(Vector2 dir) => BoxCast(dir, jumpableWall);
+
+    private RaycastHit2D BoxCast(Vector2 dir, LayerMask layer)
+    {
+        return Physics2D.BoxCast(boxCollider.bounds.center, (Vector2)boxCollider.bounds.size, 0f, dir.normalized, 0.1f, layer);
     }
 
 }

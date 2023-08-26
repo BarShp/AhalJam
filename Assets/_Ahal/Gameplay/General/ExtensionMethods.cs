@@ -26,4 +26,11 @@ public static class ExtensionMethods
         localPosition.x = x;
         t.localPosition = localPosition;
     }
+    
+    public static void SetX(this Transform t, float x)
+    {
+        var position = t.position;
+        position.x = x;
+        t.position = position;
+    }
 }
