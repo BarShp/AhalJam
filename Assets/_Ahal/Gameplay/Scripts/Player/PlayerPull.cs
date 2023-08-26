@@ -11,7 +11,7 @@ public class PlayerPull : MonoBehaviour
     public bool IsGrabbingObject => grabbedObject != null;
     public Vector2 GrabbedObjectDirection => (grabbedObject.transform.position - transform.position).normalized;
     
-    private GameObject grabbedObject;
+    public GameObject grabbedObject;
     private int layerIndex;
 
     private Vector3 originalRayPointLocalPos;
