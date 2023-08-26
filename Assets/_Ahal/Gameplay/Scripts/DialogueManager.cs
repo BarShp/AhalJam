@@ -52,15 +52,9 @@ public class DialogueManager : MonoBehaviour
         {
             isActive = false;
             currentActors[currentActorId].dialogueBox.SetActive(false);
-    
+            GameObject.Find("Player").GetComponent<PlayerMovement2D>().disableControls = false;
         }
     }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         
