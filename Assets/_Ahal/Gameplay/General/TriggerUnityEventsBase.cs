@@ -9,11 +9,11 @@ public abstract class TriggerUnityEventsBase : MonoBehaviour
     protected Action triggerEnterHandler;
     protected Action triggerStayHandler;
     protected Action triggerExitHandler;
-    protected Collider2D collider;
+    protected Collider2D triggerCollider;
     
     protected void Awake()
     {
-        collider = GetComponent<Collider2D>();
+        triggerCollider = GetComponent<Collider2D>();
     }
 
     protected void OnTriggerEnter2D(Collider2D col)

@@ -14,6 +14,6 @@ public class SinglePressPressurePlate : TriggerUnityEventsBase
     private void PressureStartedHandler()
     {
         OnPressurePlateActivated?.Invoke();
-        collider.enabled = false;
+        triggerCollider.enabled = false;
     }
 }
