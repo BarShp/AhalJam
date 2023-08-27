@@ -196,6 +196,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d64d2d0b4efa74073b2cf3e91f3c2f31, type: 3}
+--- !u!114 &45971700 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3500199110958716151, guid: d64d2d0b4efa74073b2cf3e91f3c2f31, type: 3}
+  m_PrefabInstance: {fileID: 45971699}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c50292868b7369644ae6e392d17ac52e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &104456993
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +222,7 @@ GameObject:
   - component: {fileID: 104456999}
   - component: {fileID: 104456998}
   - component: {fileID: 104456997}
+  - component: {fileID: 104457001}
   m_Layer: 10
   m_Name: Tilemap-Spikes
   m_TagString: Untagged
@@ -642,6 +654,45 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &104457001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104456993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07c8c92267ff964e96425b5dec6b85a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStay:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 45971700}
+        m_TargetAssemblyTypeName: Respawner, Assembly-CSharp
+        m_MethodName: Respawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &338159144
 GameObject:
   m_ObjectHideFlags: 0
@@ -29057,6 +29108,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollision:
     m_PersistentCalls:
       m_Calls: []
 --- !u!61 &1660703860

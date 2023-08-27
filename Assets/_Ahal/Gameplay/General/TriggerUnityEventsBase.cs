@@ -9,6 +9,7 @@ public abstract class TriggerUnityEventsBase : MonoBehaviour
     protected Action triggerEnterHandler;
     protected Action triggerStayHandler;
     protected Action triggerExitHandler;
+    protected Action collisionEnterHandler;
     protected Collider2D triggerCollider;
     
     protected void Awake()
@@ -32,5 +33,10 @@ public abstract class TriggerUnityEventsBase : MonoBehaviour
     {
         if (!triggerLayers.IsInLayer(col.gameObject.layer)) return;
         triggerExitHandler?.Invoke();
+    }
+
+    protected void OnCollisionEnter2D(Collision2D col) {
+        if (!triggerLayers.IsInLayer(col.gameObject.layer)) return;
+        collisionEnterHandler?.Invoke();        
     }
 }

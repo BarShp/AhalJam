@@ -8,7 +8,7 @@ public class EraChangerController : MonoBehaviour
     [SerializeField] EraManager eraManager;
 
     public List<EraChangerInput> eraInputs;
-
+    EraType currentEra = EraType.Era1;
     protected void Update()
     {
         DetectInput();
@@ -17,20 +17,34 @@ public class EraChangerController : MonoBehaviour
 
     private void DetectInput()
     {
-        foreach (EraChangerInput eraInput in eraInputs)
-        {
-            if (Input.GetKeyDown(eraInput.InputKeyCode))
+
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                OnEraChangePressed(eraInput.EraType);
+                ToggleEra();
             }
-        }
     }
 
     private void OnEraChangePressed(EraType eraType)
     {
         eraManager.ActivateEra(eraType);
     }
+    
+    private void ToggleEra()
+    {
+        // Toggle between Era1 and Era2
+        if (currentEra == EraType.Era1)
+        {
+            currentEra = EraType.Era2;
+        }
+        else
+        {
+            currentEra = EraType.Era1;
+        }
+
+        eraManager.ActivateEra(currentEra);
+    }
 }
+
 
 public enum EraType
 {
