@@ -25,6 +25,7 @@ public class PlayerMovement2D : MonoBehaviour
     
     [SerializeField] private LayerMask climbableLayer;
     [SerializeField] private float climbingSpeed = 2f;
+    [SerializeField] private float climbingVerticalJumpForce = 10f;
     [SerializeField] private float climbingSideJumpForce = 2f;
     
     public bool disableControls = false;
@@ -229,7 +230,7 @@ public class PlayerMovement2D : MonoBehaviour
         {
             DetachClimbable();
             var climbingSideJumpDir = horizontalDir.magnitude > 0.01f ? horizontalDir : Vector2.right; 
-            rb.AddForce(Vector2.up * jumpForce + climbingSideJumpDir * climbingSideJumpForce);
+            rb.AddForce(Vector2.up * climbingVerticalJumpForce + climbingSideJumpDir * climbingSideJumpForce);
             didJump = true;
             return;
         }
