@@ -4,9 +4,12 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class EraManager : MonoBehaviour
 {
+    [SerializeField] private Image era2Overlay;
+    
     Dictionary<EraType, string> eraTypeToTags;
     Dictionary<EraType, List<EraObjectController>> eraTypeToEraObjects = new ();
     EraType? currentEraType;
@@ -30,6 +33,8 @@ public class EraManager : MonoBehaviour
 
         SetEraObjectControllersState(newEraType, true);
         currentEraType = newEraType;
+        
+        era2Overlay.gameObject.SetActive(currentEraType == EraType.Era2);
     }    
 
     private void DisableAllEraObjectControllers()
