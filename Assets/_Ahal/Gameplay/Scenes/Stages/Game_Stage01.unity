@@ -20705,6 +20705,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175b815b5dbc65c45b2d7ee8e2c0bf8c, type: 3}
+--- !u!95 &742599216 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4742088590252249891, guid: 49a3882f929054b0091ca4118f8c75c7, type: 3}
+  m_PrefabInstance: {fileID: 783763683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &783763683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20813,6 +20818,7 @@ GameObject:
   - component: {fileID: 1387893814}
   - component: {fileID: 1387893813}
   - component: {fileID: 1387893812}
+  - component: {fileID: 1387893815}
   m_Layer: 3
   m_Name: Tilemap-Era01
   m_TagString: Era1
@@ -21198,6 +21204,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1387893815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387893808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a38781451fa8345a5e22734f55fcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canRespawn: 1
 --- !u!1 &1435449252
 GameObject:
   m_ObjectHideFlags: 0
@@ -28437,11 +28456,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!95 &1458168293 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4742088590252249891, guid: 49a3882f929054b0091ca4118f8c75c7, type: 3}
-  m_PrefabInstance: {fileID: 783763683}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1544858396
 GameObject:
   m_ObjectHideFlags: 0
@@ -28510,6 +28524,69 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1545695721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1545695724}
+  - component: {fileID: 1545695723}
+  - component: {fileID: 1545695722}
+  m_Layer: 0
+  m_Name: Era Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1545695722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545695721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a020dde5d1fce747af790ac05cb2e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eraManager: {fileID: 1545695723}
+  eraInputs:
+  - EraType: 0
+    InputKeyCode: 113
+  - EraType: 1
+    InputKeyCode: 101
+--- !u!114 &1545695723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545695721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b0352d62611e3742be36a403993c6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1545695724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545695721}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.96072, y: -1.6297213, z: 0.6490487}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1551263965 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 684437669575943090, guid: 175b815b5dbc65c45b2d7ee8e2c0bf8c, type: 3}
@@ -28529,6 +28606,7 @@ GameObject:
   - component: {fileID: 1563966623}
   - component: {fileID: 1563966622}
   - component: {fileID: 1563966621}
+  - component: {fileID: 1563966624}
   m_Layer: 3
   m_Name: Tilemap-Era02
   m_TagString: Era2
@@ -28914,6 +28992,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1563966624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563966617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a38781451fa8345a5e22734f55fcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canRespawn: 1
 --- !u!1 &1660703858
 GameObject:
   m_ObjectHideFlags: 0
@@ -28950,7 +29041,7 @@ MonoBehaviour:
   OnEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1458168293}
+      - m_Target: {fileID: 742599216}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
@@ -29231,3 +29322,4 @@ SceneRoots:
   - {fileID: 1544858399}
   - {fileID: 1660703861}
   - {fileID: 381600150}
+  - {fileID: 1545695724}
