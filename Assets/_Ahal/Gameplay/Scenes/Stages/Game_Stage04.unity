@@ -4417,6 +4417,7 @@ GameObject:
   - component: {fileID: 588755283}
   - component: {fileID: 588755282}
   - component: {fileID: 588755281}
+  - component: {fileID: 588755284}
   m_Layer: 9
   m_Name: Tilemap-rope06-Era02
   m_TagString: Era2
@@ -4802,6 +4803,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &588755284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588755277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a38781451fa8345a5e22734f55fcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canRespawn: 1
 --- !u!1 &642109144
 GameObject:
   m_ObjectHideFlags: 0
@@ -27784,6 +27798,7 @@ GameObject:
   - component: {fileID: 1316226806}
   - component: {fileID: 1316226805}
   - component: {fileID: 1316226804}
+  - component: {fileID: 1316226807}
   m_Layer: 0
   m_Name: Tilemap-Era02MovingPlatform
   m_TagString: Era2
@@ -28127,6 +28142,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1316226807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316226800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a38781451fa8345a5e22734f55fcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canRespawn: 1
 --- !u!1 &1374337643 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 684437669575943090, guid: 175b815b5dbc65c45b2d7ee8e2c0bf8c, type: 3}
@@ -123336,6 +123364,7 @@ GameObject:
   - component: {fileID: 1439213358}
   - component: {fileID: 1439213360}
   - component: {fileID: 1439213359}
+  - component: {fileID: 1439213361}
   m_Layer: 9
   m_Name: Tilemap-rope04-Era02
   m_TagString: Era2
@@ -123711,6 +123740,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1439213361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439213354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a38781451fa8345a5e22734f55fcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canRespawn: 1
 --- !u!1 &1451313241
 GameObject:
   m_ObjectHideFlags: 0
@@ -123725,6 +123767,7 @@ GameObject:
   - component: {fileID: 1451313247}
   - component: {fileID: 1451313246}
   - component: {fileID: 1451313245}
+  - component: {fileID: 1451313248}
   m_Layer: 9
   m_Name: Tilemap-rope08-Era02
   m_TagString: Untagged
@@ -124130,6 +124173,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1451313248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451313241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a38781451fa8345a5e22734f55fcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canRespawn: 1
 --- !u!1 &1499550446
 GameObject:
   m_ObjectHideFlags: 0
@@ -124144,6 +124200,7 @@ GameObject:
   - component: {fileID: 1499550452}
   - component: {fileID: 1499550451}
   - component: {fileID: 1499550450}
+  - component: {fileID: 1499550453}
   m_Layer: 9
   m_Name: Tilemap-rope07-Era01
   m_TagString: Era1
@@ -124569,6 +124626,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1499550453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499550446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a38781451fa8345a5e22734f55fcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canRespawn: 1
 --- !u!1001 &1521198197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126609,13 +126679,14 @@ GameObject:
   - component: {fileID: 2089046603}
   - component: {fileID: 2089046602}
   - component: {fileID: 2089046601}
+  - component: {fileID: 2089046604}
   m_Layer: 3
   m_Name: Tilemap-Era01
   m_TagString: Era1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2089046598
 Transform:
   m_ObjectHideFlags: 0
@@ -127140,7 +127211,73 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 2089046603}
+    m_ColliderPaths:
+    - - X: 760000000
+        Y: 180000000
+      - X: 710000000
+        Y: 180000000
+      - X: 710000000
+        Y: 170000000
+      - X: 760000000
+        Y: 170000000
+    - - X: 120000000
+        Y: 180000000
+      - X: 90000000
+        Y: 180000000
+      - X: 90000000
+        Y: 170000000
+      - X: 120000000
+        Y: 170000000
+    - - X: 1000000000
+        Y: 170000000
+      - X: 930000000
+        Y: 170000000
+      - X: 930000000
+        Y: 160000000
+      - X: 1000000000
+        Y: 160000000
+    - - X: 470000000
+        Y: 170000000
+      - X: 440000000
+        Y: 170000000
+      - X: 440000000
+        Y: 160000000
+      - X: 470000000
+        Y: 160000000
+    - - X: -20000000
+        Y: 90000000
+      - X: -60000000
+        Y: 90000000
+      - X: -60000000
+        Y: 80000000
+      - X: -20000000
+        Y: 80000000
+    - - X: 670000000
+        Y: 20000000
+      - X: 640000000
+        Y: 20000000
+      - X: 640000000
+        Y: 10000000
+      - X: 670000000
+        Y: 10000000
+    - - X: 830000000
+        Y: 20000000
+      - X: 800000000
+        Y: 20000000
+      - X: 800000000
+        Y: 10000000
+      - X: 830000000
+        Y: 10000000
+    - - X: 930000000
+        Y: -10000000
+      - X: 900000000
+        Y: -10000000
+      - X: 900000000
+        Y: -20000000
+      - X: 930000000
+        Y: -20000000
   m_CompositePaths:
     m_Paths:
     - - {x: 75.99997, y: 17}
@@ -127242,6 +127379,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &2089046604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089046597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a38781451fa8345a5e22734f55fcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canRespawn: 1
 --- !u!1 &2090524361
 GameObject:
   m_ObjectHideFlags: 0
