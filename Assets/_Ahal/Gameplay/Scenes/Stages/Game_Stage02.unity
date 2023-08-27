@@ -21616,6 +21616,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175b815b5dbc65c45b2d7ee8e2c0bf8c, type: 3}
+--- !u!114 &774884265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9055679545938418099, guid: 175b815b5dbc65c45b2d7ee8e2c0bf8c, type: 3}
+  m_PrefabInstance: {fileID: 774884264}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &783763683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21762,6 +21773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0352d62611e3742be36a403993c6c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  era2Overlay: {fileID: 774884265}
 --- !u!4 &944859806
 Transform:
   m_ObjectHideFlags: 0
@@ -30742,8 +30754,8 @@ GameObject:
   - component: {fileID: 1485377389}
   - component: {fileID: 1485377392}
   m_Layer: 9
-  m_Name: Tilemap-rope04-Era01
-  m_TagString: Era1
+  m_Name: Tilemap-rope04-Era02
+  m_TagString: Era2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
