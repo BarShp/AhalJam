@@ -141,7 +141,7 @@ MonoBehaviour:
   nudgeForce: 100
   jumpableGround:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 1288
   jumpableWall:
     serializedVersion: 2
     m_Bits: 128

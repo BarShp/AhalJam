@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/_Ahal/Gameplay/Scenes/Stages/Game_Stage04.unity
     guid: 90272079e4ee97b4785e6e6a33b3137d
   - enabled: 1
+    path: Assets/_Ahal/Gameplay/Scenes/Stages/Game_Stage05.unity
+    guid: 067669b3d0add4f45aac0811f0f8083f
+  - enabled: 1
     path: Assets/_Ahal/Gameplay/Scenes/MainMenu.unity
     guid: 1be467a70a190554f98a822e84c1d820
   m_configObjects: {}

@@ -1,14 +1,17 @@
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField] bool enablePlayerControls = true;
     public static bool isActive = false;
     // Start is called before the first frame update
     DialogueMessage[] currentMessages;
     Actor[] currentActors;
     int activeMessage = 0;
     int currentActorId;
+    public UnityEvent OnDialogueFinished;
+    
 
     public void OpenDialogue(DialogueMessage[] messages, Actor[] actors)
     {
@@ -45,9 +48,13 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            OnDialogueFinished?.Invoke();
             isActive = false;
             currentActors[currentActorId].dialogueBox.SetActive(false);
-            GameObject.Find("Player").GetComponent<PlayerMovement2D>().disableControls = false;
+            if (enablePlayerControls)
+            {
+                GameObject.Find("Player").GetComponent<PlayerMovement2D>().disableControls = false;
+            }
         }
     }
     void Update()

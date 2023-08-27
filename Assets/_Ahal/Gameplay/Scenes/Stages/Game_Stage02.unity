@@ -530,10 +530,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4141466074968336934, guid: d64d2d0b4efa74073b2cf3e91f3c2f31, type: 3}
-      propertyPath: jumpableGround.m_Bits
-      value: 1032
-      objectReference: {fileID: 0}
     - target: {fileID: 5289584062235683536, guid: d64d2d0b4efa74073b2cf3e91f3c2f31, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.42
