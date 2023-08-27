@@ -70,10 +70,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2130151245
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1003578062, guid: bb503a54efb5c41f88fbcbc641ca445d, type: 3}
+  m_Sprite: {fileID: 524618010, guid: a4ce805d084d324499af3676237a2b64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -162,7 +162,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 0.4, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &1158634818826014192
 MonoBehaviour:
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09f91ef52abe4356b56bd73eb6588ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressureLayers:
+  triggerLayers:
     serializedVersion: 2
     m_Bits: 64
   OnPressurePlateActivated:
@@ -206,6 +206,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnPressurePlateStayTick:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPressurePlateDeactivated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5865850686306867231
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,10 +282,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2130151245
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1760535921, guid: bb503a54efb5c41f88fbcbc641ca445d, type: 3}
+  m_Sprite: {fileID: 572466892, guid: a4ce805d084d324499af3676237a2b64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

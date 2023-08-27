@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Ahal/Gameplay/Scenes/MainMenu.unity
-    guid: 1be467a70a190554f98a822e84c1d820
+    path: Assets/_Ahal/Gameplay/Scenes/Stages/Game_Stage00.unity
+    guid: c6fe889515d278742aeace5dbe8c7e37
   - enabled: 1
-    path: Assets/_Ahal/Gameplay/Scenes/Intro.unity
-    guid: 50b440d8b5e9bb74ea8fb2cec1fe68dd
+    path: Assets/_Ahal/Gameplay/Scenes/Stages/Game_Stage01.unity
+    guid: 7f1e5fbbc6fc716418c747efe4fdb863
   - enabled: 1
-    path: Assets/_Ahal/Gameplay/Scenes/FirstStageMockup.unity
-    guid: 5a6f2f915a958084dae93481758b9814
+    path: Assets/_Ahal/Gameplay/Scenes/Stages/Game_Stage02.unity
+    guid: eded6e4127e7e794b8b470b621b65467
+  - enabled: 1
+    path: Assets/_Ahal/Gameplay/Scenes/Stages/Game_Stage03.unity
+    guid: ce3fd69deb85a0b488ee4de4acfad591
+  - enabled: 1
+    path: Assets/_Ahal/Gameplay/Scenes/Stages/Game_Stage04.unity
+    guid: 90272079e4ee97b4785e6e6a33b3137d
   m_configObjects: {}

@@ -18,6 +18,7 @@ public class PlayerMovement2D : MonoBehaviour
     [SerializeField] private float maxHorizontalSpeed = 30;
     [SerializeField] private float maxVerticalSpeed = 20;
     [SerializeField] private float scaleFactor = 0.1f;
+    [SerializeField] private float nudgeForce = 2f;
     
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask jumpableWall;
@@ -90,7 +91,18 @@ public class PlayerMovement2D : MonoBehaviour
                                     Mathf.Clamp(rb.velocity.y, -maxVerticalSpeed, maxVerticalSpeed));
         SquashAndStretch();
     }
+
+    public void Nudge(Vector2 direction)
+    {
+        rb.AddForce(direction * nudgeForce);
+    }
     
+    public void DisablePlayerControls()
+    {
+        rb.velocity = new Vector3(0,0,0);        
+        playerAnimationController.SetIdle();
+        disableControls = true;
+    }
     private void SquashAndStretch()
     {
         // Calculate squash and stretch factor
@@ -120,6 +132,21 @@ public class PlayerMovement2D : MonoBehaviour
 
     private void UpdateAnimationState()
     {
+        if (playerPull.IsGrabbingObject)
+        {
+            if (Mathf.Approximately(horizontalDir.magnitude, 0) ||
+                Mathf.Approximately(Mathf.Sign(playerPull.GrabbedObjectDirection.x), Mathf.Sign(horizontalDir.x)))
+            {
+                playerAnimationController.SetPush();
+            }
+            else
+            {
+                playerAnimationController.SetPull();
+            }
+
+            return;
+        }
+        
         if (climbableCollider != null)
         {
             playerAnimationController.SetClimbing();
@@ -155,9 +182,6 @@ public class PlayerMovement2D : MonoBehaviour
             playerAnimationController.SetIdle();
             return;
         }
-        
-        // TODO: On death disable the movement component;
-        // TODO: On hurt disable the movement component for x seconds;
     }
 
     private void UpdateClimb()
@@ -193,12 +217,6 @@ public class PlayerMovement2D : MonoBehaviour
         climbableProgress = Mathf.Clamp(climbableProgress, 0, 1);
         
         transform.position = Vector2.Lerp(bottomOfClimbable, topOfClimbable, climbableProgress);
-        
-        // else 
-        // If max up - don't do anything
-        // If max down - drop
-        // If jump - back to non kinematic
-
     }
 
     private void UpdateJump()
@@ -254,14 +272,11 @@ public class PlayerMovement2D : MonoBehaviour
     private void UpdateMovement()
     {
         var horizontalMovement = horizontalDir;
-        
         if (CheckGround(horizontalDir) || CheckWall(horizontalDir))
         {
             // Slide if you're going into a wall (or side of ground)
             horizontalMovement = Vector2.zero;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
-            
-            // TODO: Set animation sliding
         }
         
         var moveDir = horizontalMovement * speed;
@@ -270,7 +285,15 @@ public class PlayerMovement2D : MonoBehaviour
 
     private void SetFlip()
     {
+        if (Mathf.Approximately(horizontalDir.magnitude, 0)) return;
+        
         var shouldFlip = horizontalInput < 0;
+
+        if (playerPull.IsGrabbingObject)
+        {
+            shouldFlip = playerPull.GrabbedObjectDirection.x < 0;
+        }
+        
         spriteRenderer.flipX = shouldFlip;
         playerPull.FlipX = shouldFlip;
     }

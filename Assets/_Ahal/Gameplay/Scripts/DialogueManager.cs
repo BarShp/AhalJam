@@ -1,14 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] GameObject AgentDialogue;
-    [SerializeField] GameObject SphinxDialogue;
     public static bool isActive = false;
     // Start is called before the first frame update
     DialogueMessage[] currentMessages;
@@ -23,13 +17,14 @@ public class DialogueManager : MonoBehaviour
         activeMessage = 0;
         isActive = true;
         DisplayMessage();
+        
     }
 
     private void DisplayMessage()
     {
         DialogueMessage messageToDisplay = currentMessages[activeMessage];
         Actor actorToDisplay = currentActors[messageToDisplay.ActorId];
-        if (currentActorId != messageToDisplay.ActorId)
+        if (currentActorId != messageToDisplay.ActorId || activeMessage == 0)
         {
             for (int i = 0; i < currentActors.Length; i++)
             {
@@ -52,19 +47,13 @@ public class DialogueManager : MonoBehaviour
         {
             isActive = false;
             currentActors[currentActorId].dialogueBox.SetActive(false);
-    
+            GameObject.Find("Player").GetComponent<PlayerMovement2D>().disableControls = false;
         }
     }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.V) && isActive)
+        if (Input.GetKeyDown(KeyCode.Space) && isActive)
         {
             NextMessage();
         }

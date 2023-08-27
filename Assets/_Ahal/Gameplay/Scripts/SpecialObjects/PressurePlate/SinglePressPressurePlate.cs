@@ -1,18 +1,19 @@
-using System;
 using UnityEngine.Events;
 
-public class SinglePressPressurePlate : PressurePlateBase
+public class SinglePressPressurePlate : TriggerUnityEventsBase
 {
     public UnityEvent OnPressurePlateActivated;
+    public UnityEvent OnPressurePlateStayTick;
+    public UnityEvent OnPressurePlateDeactivated;
         
     protected void Start()
     {
-        pressureStartedHandler += PressureStartedHandler;
+        triggerEnterHandler += PressureStartedHandler;
     }
 
     private void PressureStartedHandler()
     {
         OnPressurePlateActivated?.Invoke();
-        collider.enabled = false;
+        triggerCollider.enabled = false;
     }
 }
