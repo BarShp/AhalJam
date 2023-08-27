@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class MovingObject : MonoBehaviour
 {
     [SerializeField] bool moveOnStart;
@@ -14,15 +15,19 @@ public class MovingObject : MonoBehaviour
     private float lerpProgress = 0;
     private bool shouldMove;
 
+    private Rigidbody2D rb;
+    
     public void StartMoving() => shouldMove = true; 
     public void StopMoving() => shouldMove = false; 
     
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        
         var firstWaypoint = waypoints[0];
         targetWaypointIndex = 1;
 
-        transform.position = firstWaypoint.WayPointTransform.position;
+        rb.position = firstWaypoint.WayPointTransform.position;
         currentWaypoint = firstWaypoint;
         targetWaypoint = waypoints[targetWaypointIndex];
 
@@ -32,7 +37,7 @@ public class MovingObject : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (!shouldMove) return;
         
@@ -47,7 +52,7 @@ public class MovingObject : MonoBehaviour
         }
 
         lerpProgress += Time.deltaTime * targetWaypoint.Speed;
-        transform.position = Vector2.Lerp(currentWaypoint.WayPointTransform.position, targetWaypoint.WayPointTransform.position, lerpProgress);
+        rb.MovePosition(Vector2.Lerp(currentWaypoint.WayPointTransform.position, targetWaypoint.WayPointTransform.position, lerpProgress));
     }
 }
 
