@@ -48,7 +48,8 @@ public class PlayerDamageble : DamageableComponent
     private void DeathHandler()
     {
         // TODO: call a different system
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // Forgive me Mitzi
+        SceneManager.LoadScene("MainMenu");
         // TODO: Death Animation
     }
 }
