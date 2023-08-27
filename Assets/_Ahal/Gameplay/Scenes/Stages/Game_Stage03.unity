@@ -27427,10 +27427,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3613757543667034936, guid: 6f5a0fca2b1792248add5ac4cd7d210b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4657714326427399918, guid: 6f5a0fca2b1792248add5ac4cd7d210b, type: 3}
       propertyPath: m_Name
       value: MovingPlatform3tiles

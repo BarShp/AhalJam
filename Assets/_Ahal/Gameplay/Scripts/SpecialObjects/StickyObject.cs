@@ -18,6 +18,7 @@ public class StickyObject : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (stickingObject == null) return;
         var stickingObjectVelocity = stickingObject.velocity;
         stickingObjectVelocity.x += rb.velocity.x;
     }
