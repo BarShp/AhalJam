@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Ahal/Gameplay/Scenes/MainMenu.unity
+    guid: 1be467a70a190554f98a822e84c1d820
+  - enabled: 1
     path: Assets/_Ahal/Gameplay/Scenes/Stages/Game_Stage00.unity
     guid: c6fe889515d278742aeace5dbe8c7e37
   - enabled: 1
@@ -23,7 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Ahal/Gameplay/Scenes/Stages/Game_Stage05.unity
     guid: 067669b3d0add4f45aac0811f0f8083f
-  - enabled: 1
-    path: Assets/_Ahal/Gameplay/Scenes/MainMenu.unity
-    guid: 1be467a70a190554f98a822e84c1d820
   m_configObjects: {}

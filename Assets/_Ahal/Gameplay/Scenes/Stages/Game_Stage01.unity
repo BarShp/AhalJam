@@ -152,6 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16403986a51a0c438f8b10c37f69043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enablePlayerControls: 1
+  OnDialogueFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &35125189
 Transform:
   m_ObjectHideFlags: 0
@@ -20970,7 +20974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7562505059763712167, guid: 49a3882f929054b0091ca4118f8c75c7, type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7562505059763712167, guid: 49a3882f929054b0091ca4118f8c75c7, type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
