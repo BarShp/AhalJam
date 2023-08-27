@@ -1,7 +1,6 @@
-using System;
 using UnityEngine.Events;
 
-public class ContinuousPressurePlate : PressurePlateBase
+public class ContinuousPressurePlate : TriggerUnityEventsBase
 {
     public UnityEvent OnPressurePlateActivated;
     public UnityEvent OnPressurePlateStayTick;
@@ -9,8 +8,8 @@ public class ContinuousPressurePlate : PressurePlateBase
         
     protected void Start()
     {
-        pressureStartedHandler += () => OnPressurePlateActivated?.Invoke();
-        pressureStayHandler += () => OnPressurePlateStayTick?.Invoke();
-        pressureExitHandler += () => OnPressurePlateDeactivated?.Invoke();
+        triggerEnterHandler += () => OnPressurePlateActivated?.Invoke();
+        triggerStayHandler += () => OnPressurePlateStayTick?.Invoke();
+        triggerExitHandler += () => OnPressurePlateDeactivated?.Invoke();
     }
 }
